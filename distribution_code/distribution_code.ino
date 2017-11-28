@@ -66,41 +66,61 @@ class Invader {
     }
     // sets values for private date members x and y
     Invader(int x_arg, int y_arg) {
+      x = x_arg;
+      y = y_arg;
     }
     // sets values for private data members
     Invader(int x_arg, int y_arg, int strength_arg) {
+      x = x_arg;
+      y = y_arg;
+      strength = strength_arg;
     }
     // sets values for private data members
     void initialize(int x_arg, int y_arg, int strength_arg) {
+      x = x_arg;
+      y = y_arg;
+      strength = strength_arg;
     }
     
     // getters
     int get_x() const {
+      return x;
     }
     int get_y() const {
+      return y;
     }
     int get_strength() const {
+      return strength;
     }
 
     // Moves the Invader down the screen by one row
     // Modifies: y
     void move() {
+      y++;
     }
     
     // draws the Invader if its strength is greater than 0
     // calls: draw_with_rgb
     void draw() {
+      if(strength > 0) draw_with_rgb();
+      
+      //FIX THIS
     }
     
     // draws black where the Invader used to be
     // calls: draw_with_rgb
     void erase() {
+      
+      //NEED THIS
     }    
     
     // Invader is hit by a Cannonball.
     // Modifies: strength
     // calls: draw, erase
     void hit() {
+      strength--;
+      draw();
+      erase();
     }
 
   private:
@@ -110,6 +130,9 @@ class Invader {
     
     // draws the Invader
     void draw_with_rgb(Color body_color, Color eye_color) {
+
+      // NEED THIS
+      
     }
 };
 
@@ -123,35 +146,53 @@ class Cannonball {
     
     // resets private data members to initial values
     void reset() {
+      x = 0;
+      y = 0;
+      fired = false;
     }
     
     // getters
     int get_x() const {
+      return x;
     }
     int get_y() const {
+      return y;
     }
     bool has_been_fired() const {
+      return fired;
     }
     
     // sets private data members
     void fire(int x_arg, int y_arg) {
+      x = x_arg;
+      y = y_arg;
     }
     
     // moves the Cannonball and detects if it goes off the screen
     // Modifies: y, fired
     void move() {
+      fired = true;
+      y++;
+      
+      if(y > //pixel lengeth) // FIX THIS
+        reset();
+      
     }
     
     // resets private data members to initial values
     void hit() {
+      reset();
     }
     
     // draws the Cannonball, if it is fired
     void draw() {
+
+      // NEED THIS
     }
     
     // draws black where the Cannonball used to be
     void erase() {
+      // NEED THIS
     }
 
   private:
@@ -170,28 +211,35 @@ class Player {
     
     // getters
     int get_x() const {
+      return x;
     }
     int get_y() const {
+      return y;
     }
     int get_lives() const {
     }
+    return lives;
     
     // setter
     void set_x(int x_arg) {
+      x = x_arg;
     }
     
     // Modifies: lives
     void die() {
+      lives--;
     }
     
     // draws the Player
     // calls: draw_with_rgb
     void draw() {
+     draw_with_rgb(Color, Color);
     }
     
     // draws black where the Player used to be
     // calls: draw_with_rgb
     void erase() {
+      
     }
 
   private:
@@ -201,6 +249,8 @@ class Player {
 
     // sets private data members x and y to initial values
     void initialize(int x_arg, int y_arg) {
+      x = x_arg;
+      y = y_arg;
     }
     
     // draws the player
